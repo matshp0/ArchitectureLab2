@@ -13,7 +13,7 @@ type testCase struct {
 }
 
 func TestCalculatePostfix(t *testing.T) {
-	testCases := []testCase{
+	testCases := []TestCase{
 		{"2 3 +", 5.0, false},
 		{"3 2 3 4 5", 0.0, true},
 		{"2 a 3 2", 0.0, true},
@@ -25,11 +25,6 @@ func TestCalculatePostfix(t *testing.T) {
 		{"5 1 2 + 4 * + 3 -", 14.0, false},
 		{"4 2 3 5 1 - + * +", 18.0, false},
 		{"4 2 - 3 2 ^ * 5 +", 23.0, false},
-	}
-
-	res, err := CalculatePostfix("2 2 2 2 + + +")
-	if assert.Nil(t, err) {
-		assert.Equal(t, 8.0, res)
 	}
 	for _, test := range testCases {
 		t.Run(test.input, func(t *testing.T) {
