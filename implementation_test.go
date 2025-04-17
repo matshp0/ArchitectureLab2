@@ -52,3 +52,12 @@ func TestNewImplementation(t *testing.T) {
 		t.Error("NewImplementation() повернув nil")
 	}
 }
+
+func TestFailingExample(t *testing.T) {
+	impl := NewImplementation()
+	result := impl.Process(10)
+	// Навмисно очікуємо неправильний результат для демонстрації failed build
+	if result != 1000 {
+		t.Errorf("Process(10) = %d; want 1000", result)
+	}
+}
