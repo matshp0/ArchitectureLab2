@@ -45,3 +45,10 @@ func ExampleCalculatePostfix() {
 	// Output:
 	// 13
 }
+
+func TestNewImplementation(t *testing.T) {
+	impl := NewImplementation()
+	if impl == nil {
+		t.Error("NewImplementation() повернув nil")
+	}
+}
