@@ -13,7 +13,7 @@ type testCase struct {
 }
 
 func TestCalculatePostfix(t *testing.T) {
-	testCases := []TestCase{
+	testCases := []testCase{
 		{"2 3 +", 5.0, false},
 		{"3 2 3 4 5", 0.0, true},
 		{"2 a 3 2", 0.0, true},
