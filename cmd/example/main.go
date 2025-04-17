@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	lab2 "github.com/roman-mazur/architecture-lab-2"
+	lab2 "github.com/matshp0/ArchitectureLab2"
 )
 
 var (
@@ -22,6 +22,6 @@ func main() {
 	//       }
 	//       err := handler.Compute()
 
-	res, _ := lab2.PrefixToPostfix("+ 2 2")
+	res, _ := lab2.CalculatePostfix("+ 2 2")
 	fmt.Println(res)
 }
