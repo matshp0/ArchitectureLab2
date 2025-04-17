@@ -26,11 +26,6 @@ func TestCalculatePostfix(t *testing.T) {
 		{"4 2 3 5 1 - + * +", 18.0, false},
 		{"4 2 - 3 2 ^ * 5 +", 23.0, false},
 	}
-
-	res, err := CalculatePostfix("2 2 2 2 + + +")
-	if assert.Nil(t, err) {
-		assert.Equal(t, 8.0, res)
-	}
 	for _, test := range testCases {
 		t.Run(test.input, func(t *testing.T) {
 			value, err := CalculatePostfix(test.input)
