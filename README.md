@@ -1,7 +1,7 @@
-Шаблон для 2-гої роботи з архітектури ПЗ
+2 робота з архітектури ПЗ
 ---
 
-Використайте кнопку **"Use this template"**, щоб створити власний репозиторій.
+
 
 ## GitHub Actions
 
@@ -12,5 +12,5 @@
 
 ### Приклади збірок
 
-- [Успішна збірка](https://github.com/matshp0/ArchitectureLab2/actions/workflows/build.yml)
+- [Успішна збірка](https://github.com/matshp0/ArchitectureLab2/actions/runs/14522148908/job/40745384404)
 - [Приклад Pull Request з автоматичною збіркою](https://github.com/matshp0/ArchitectureLab2/pulls)
