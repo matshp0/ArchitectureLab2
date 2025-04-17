@@ -20,16 +20,16 @@ var opMap = map[string]func(float64, float64) (float64, error){
 	"^": func(a, b float64) (float64, error) { return math.Pow(a, b), nil },
 }
 
-type Operand struct {
+type operand struct {
 	number float64
 	symbol string
 }
 
-func ParseOperands(str string) ([]Operand, error) {
-	var result []Operand
+func parseOperands(str string) ([]operand, error) {
+	var result []operand
 	arr := strings.Split(str, " ")
 	for _, el := range arr {
-		var parsed Operand
+		var parsed operand
 		value, err := strconv.ParseFloat(el, 64)
 		if err != nil {
 			_, ok := opMap[el]
@@ -46,7 +46,7 @@ func ParseOperands(str string) ([]Operand, error) {
 }
 
 func CalculatePostfix(input string) (float64, error) {
-	operands, err := ParseOperands(input)
+	operands, err := parseOperands(input)
 	if err != nil {
 		return 0, err
 	}
@@ -68,9 +68,9 @@ func CalculatePostfix(input string) (float64, error) {
 		if err != nil {
 			return 0, err
 		}
-		var result Operand
+		var result operand
 		result.number = value
-		operands = append(operands[:i-2], append([]Operand{result}, operands[i+1:]...)...)
+		operands = append(operands[:i-2], append([]operand{result}, operands[i+1:]...)...)
 		i -= 2
 	}
 	return operands[0].number, nil
